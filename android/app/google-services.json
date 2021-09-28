@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "391148217564",
+    "project_id": "liberty-test-a16c0",
+    "storage_bucket": "liberty-test-a16c0.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:391148217564:android:48383c4c860b44e182c019",
+        "android_client_info": {
+          "package_name": "com.toykam.la.test.todo_app"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "391148217564-kpij0r3nhlkg30ppsmgjird5g4oblotm.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCzwV7tet1vtbDh9AI9RTJfubEmW_iljDM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "391148217564-kpij0r3nhlkg30ppsmgjird5g4oblotm.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
