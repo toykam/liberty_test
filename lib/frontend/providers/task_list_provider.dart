@@ -63,15 +63,18 @@ class TaskListProvider extends ChangeNotifier {
       context: context,
       builder: (context) {
         return AlertDialog(
-          title: Text('Confirm'),
-          content: Text('Do you want to delete selected tasks?'),
+          title: const Text('Confirm'),
+          content: const Text('Do you want to delete selected tasks?'),
           actions: [
             TextButton(
-              child: Text('Yes'),
-              onPressed: () => deleteTasks(),
+              child: const Text('Yes'),
+              onPressed: () {
+                Navigator.pop(context);
+                deleteTasks();
+              }
             ),
             TextButton(
-              child: Text('No'),
+              child: const Text('No'),
               onPressed: () => Navigator.pop(context),
             )
           ],

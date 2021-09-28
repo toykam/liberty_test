@@ -28,18 +28,24 @@ class CreateTaskProvider extends ChangeNotifier {
   void createTask(BuildContext context) async {
     BotToast.showLoading();
 
-    User? user = await auth.getCurrentUser();
-    task.uid = user!.uid;
-    try {
-      await taskService.createTask(task);
-      BotToast.showSimpleNotification(title: 'Task created successfully');
+    if (task.title == null || task.description == null) {
+      BotToast.showSimpleNotification(title: 'All fields are required to create a task');
+      BotToast.closeAllLoading();
+    } else {
+      FocusScope.of(context).unfocus();
+      User? user = await auth.getCurrentUser();
+      task.uid = user!.uid;
+      try {
+        await taskService.createTask(task);
+        BotToast.showSimpleNotification(title: 'Task created successfully');
 
-      BotToast.closeAllLoading();
-      Provider.of<TaskListProvider>(context, listen: false).initialize();
-      Navigator.pop(context);
-    } catch (error) {
-      BotToast.showSimpleNotification(title: 'Error: ${error}', backgroundColor: Colors.red);
-      BotToast.closeAllLoading();
+        BotToast.closeAllLoading();
+        Provider.of<TaskListProvider>(context, listen: false).initialize();
+        Navigator.pop(context);
+      } catch (error) {
+        BotToast.showSimpleNotification(title: 'Error: ${error}', backgroundColor: Colors.red);
+        BotToast.closeAllLoading();
+      }
     }
   }
 }
